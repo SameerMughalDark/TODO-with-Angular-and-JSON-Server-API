@@ -1,6 +1,8 @@
 # CRUDJSONServer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+## for JSON-Server DB Connection
+Run `json-server -w db.json` 
 
 ## Development server
 
