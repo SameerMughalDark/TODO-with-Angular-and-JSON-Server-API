@@ -1,0 +1,65 @@
+<div class="container-fluid my-2 bg-light ">
+  <div class="container">
+    <h2 class="bg-danger text-light p-2">Todo List</h2>
+
+
+
+<!-- Modal -->
+<div class="my-3" [class.darkEditArea]="editDataInputsHide" >
+  <div class="modal-dialog bg-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header p-2">
+        <h5 class="modal-title" id="exampleModalLabel">Update About Task</h5>
+        <button type="button" class="close mb-3 my-2 bg-danger text-light border"  (click)="editDataFieldHide()" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mb-2 p-2">
+        <form>
+          <div class="form-group  d-flex justify-content-around">
+            <input type="text" class="form-control" name="editTaskInformationField" [(ngModel)]="editTaskValue" id="editTextF"
+               placeholder="Enter Task Information">
+               
+               <button type="submit" class="btn btn-success btn-sm mx-1" (click)="editTask()" >Update </button>
+               <button type="button" class="btn btn-danger mx-2" data-dismiss="modal"  (click)="editDataFieldHide()">Close</button>
+          </div>
+  
+        </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="container mb-2">
+      <form>
+        <div class="form-group  d-flex justify-content-around">
+          <input type="text" class="form-control" name="taskInformationField" [(ngModel)]="addTaskValue" id="textF"
+             placeholder="Enter Task Information">
+          <button type="submit" class="btn btn-success btn-sm mx-2" (click)="addTask()">+</button>
+        </div>
+
+      </form>
+    </div>
+    <h5 class="bg-warning p-2">Tasks:</h5>
+    <div class="row shadow" *ngFor="let items of taskArr">
+      <div class="col-sm p-2 text-center border">
+        {{items.id}}
+      </div>
+      <div class="col-sm p-2 text-center border">
+        {{items.task_name}}
+      </div>
+      <div class="col-sm p-2 border">
+        <button class="btn btn-outline-primary" (click)="editDataFieldShow(items)">Edit</button>
+        <button class="btn btn-outline-danger mx-3" (click)="deleteTask(items)">Delete</button>
+      </div>
+    </div>
+
+
+
+    
+  </div>
+</div>
+

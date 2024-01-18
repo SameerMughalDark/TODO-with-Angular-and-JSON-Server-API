@@ -1,0 +1,6 @@
+.darkEditArea{
+  opacity: 0;
+  visibility: hidden !important;
+  height: 0px;
+  transition: all 0.3s ease-in-out;
+}
